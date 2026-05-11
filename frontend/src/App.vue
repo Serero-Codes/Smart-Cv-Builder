@@ -598,7 +598,7 @@ html, body { background: #020202; }
   max-width: 100% !important;
   margin: 0 !important;
   padding: 0 !important;
-  text-align: left !important;
+  text-align: center !important;
 }
 
 /* All keyframes global so Vue scoped hashing doesn't break animation references */
@@ -689,15 +689,17 @@ html, body { background: #020202; }
   mask-image: radial-gradient(ellipse 80% 80% at 50% 0%, black 40%, transparent 100%);
 }
 
-.content-wrapper {
-  position: relative;
-  z-index: 10;
-  width: 100%;
-  max-width: 1100px;
-  padding: 0 4rem;
-  margin: 0 auto;
-  box-sizing: border-box;
-}
+.content-wrapper { 
+  position: relative; 
+  z-index: 10; 
+  width: 100%; 
+  max-width: 100%; 
+  padding: 0 2rem; 
+  margin: 0 auto; 
+  box-sizing: border-box; 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; }
 
 .view-container { width: 100%; }
 
@@ -712,13 +714,20 @@ html, body { background: #020202; }
 /* ══════════════════════════════════════════
    LANDING — NAV
 ══════════════════════════════════════════ */
-.landing-view { padding-top: 2rem; }
+.landing-view { 
+  padding-top: 2rem; 
+  width: 100%; 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  text-align: center; }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 0 2rem;
+  width: 100%;
 }
 .nav-logo {
   display: flex;
@@ -764,8 +773,15 @@ html, body { background: #020202; }
 /* ══════════════════════════════════════════
    LANDING — HERO
 ══════════════════════════════════════════ */
-.hero-section { padding: 2rem 0 3rem; }
 
+.hero-section { padding: 2rem 0 3rem; }
+.hero-section { 
+  padding: 2rem 0 3rem; 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  text-align: center; 
+  width: 100%; }
 .hero-badge {
   display: inline-flex;
   align-items: center;
@@ -817,6 +833,7 @@ html, body { background: #020202; }
   flex-wrap: wrap;
   gap: 8px;
   margin-bottom: 2.5rem;
+  justify-content: center;
 }
 .chip {
   display: inline-flex;
@@ -838,6 +855,7 @@ html, body { background: #020202; }
   align-items: center;
   gap: 1.5rem;
   flex-wrap: wrap;
+  justify-content: center;
 }
 .cta-primary {
   position: relative;
@@ -1017,6 +1035,11 @@ html, body { background: #020202; }
   width: 22px; height: 4px; border-radius: 2px;
   background: var(--border); transition: background 0.3s;
 }
+.top-nav { display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  padding: 1rem 0 2rem; 
+  width: 100%; }
 .pdot.active { background: var(--accent2); }
 
 .btn-load-demo {
@@ -1366,7 +1389,7 @@ html, body { background: #020202; }
 /* ══════════════════════════════════════════
    RESPONSIVE
 ══════════════════════════════════════════ */
-@media (max-width: 640px) {
+@media (max-width: 1200px) {
   .content-wrapper { padding: 0 1.25rem; }
   .app-container { padding: 0 0 5rem; }
   .top-nav { padding: 0.75rem 0 1.5rem; }
@@ -1391,7 +1414,5 @@ html, body { background: #020202; }
   .feature-chips { display: none; }
 }
 
-@media (min-width: 1200px) {
-  .content-wrapper { padding: 0 6rem; }
-}
+
 </style>
